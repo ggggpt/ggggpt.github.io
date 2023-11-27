@@ -80,5 +80,18 @@
             updatePosition();
         });
     </script>
+    <script>
+    // 禁用右键菜单
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // 禁用键盘事件
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
