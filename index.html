@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT</title>
+    <meta property="og:title" content="ChatGPT">
+    <meta property="og:description" content="基于深度学习的自然语言处理模型">
+    <meta property="og:image" content="https://pic3.zhimg.com/100/v2-d6b3aa15a4a09928dc753a95bc11f4a8_r.jpg">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            animation: breathing 3s infinite;
+        }
+
+        @keyframes breathing {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="dot"></div>
+    </div>
+
+    <script>
+        // 可选：动态调整圆点大小
+        var dot = document.getElementById("dot");
+        var dotSize = 50; // 初始圆点大小
+        var maxSize = 100; // 最大圆点大小
+        var minSize = 20; // 最小圆点大小
+        var breathSpeed = 0.05; // 调整呼吸速度
+
+        function updateSize() {
+            var size = minSize + (maxSize - minSize) * (Math.sin(Date.now() * breathSpeed) + 1) / 2;
+            dot.style.width = size + "px";
+            dot.style.height = size + "px";
+        }
+
+        // 可选：根据容器大小调整圆点位置
+        function updatePosition() {
+            var containerWidth = document.getElementById("container").offsetWidth;
+            var containerHeight = document.getElementById("container").offsetHeight;
+            dot.style.left = (containerWidth / 2 - dotSize / 2) + "px";
+            dot.style.top = (containerHeight / 2 - dotSize / 2) + "px";
+        }
+
+        // 初始化
+        updateSize();
+        updatePosition();
+
+        // 监听窗口大小改变事件，动态调整圆点位置
+        window.addEventListener("resize", function () {
+            updatePosition();
+        });
+    </script>
+</body>
+</html>
