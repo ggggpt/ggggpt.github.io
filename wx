@@ -1,0 +1,11 @@
+<img src="https://api.study.bjwomen.gov.cn/uploads/2023/06/06/647edd4d47cdb.jpg" style="max-width:100%;" />
+<meta name="wechat-enable-text-zoom-em" content="true">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+<script>
+        // 这里是跳转到微信的Url Scheme
+        // 自己看微信小程序开发文档生成
+    location.href="weixin://dl/business/?t=xxx";
+</script>
