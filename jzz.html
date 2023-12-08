@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%; /* 图片比例为16:9时的高度 */
-      overflow: hidden;
-    }
-    
-    .slideshow-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-wrapper label {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="slideshow-container">
-    <img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v2f4850e0b7fde42b5b50e381ee3416878.jpg" alt="Image 1">
-    <img src="https://pic1.58cdn.com.cn/nowater/webim/big/n_v222b5ccf6fd4c4a2fb2ec16e6c7a19c03.jpg" alt="Image 2">
-    <img src="https://pic5.58cdn.com.cn/nowater/webim/big/n_v20094d5007ccc4bec95ff46525cbe9cef.jpg" alt="Image 3">
-    <img src="https://pic9.58cdn.com.cn/nowater/webim/big/n_v268392e01384b438f8ac83b6d4ce92e27.jpg" alt="Image 4">
-    <img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v27d92d738ee6b47ec9c2c3a671be176fa.jpg" alt="Image 5">
-    <img src="https://pic5.58cdn.com.cn/nowater/webim/big/n_v259234f601c2e4a00a7b55c89ee7f26ab.jpg" alt="Image 6">
-    <!-- 添加更多图片，按照相同的格式 -->
-  </div>
+    <h1>年龄验证</h1>
+    <div class="checkbox-wrapper">
+        <label for="ageCheckbox">我确认我年满18岁：</label>
+        <input type="checkbox" id="ageCheckbox">
+    </div>
+</br>
+    <button onclick="checkAge()">进入网页</button>
 
-  <script>
-    // 自动播放图片
-    var images = document.querySelectorAll('.slideshow-container img');
-    var currentIndex = 0;
-    
-    setInterval(function() {
-      images[currentIndex].style.opacity = '0';
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].style.opacity = '1';
-    }, 3000); // 每隔3秒切换一张图片
-  </script>
+    <script>
+        function checkAge() {
+            var checkbox = document.getElementById("ageCheckbox");
+            if (checkbox.checked) {
+                window.location.href = "https://pic7.58cdn.com.cn/nowater/webim/big/n_v2219d2f2172f84fbc86696aea4ffc81cf.jpg";
+            } else {
+                window.location.href = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F40dbed6b-8242-43bf-9197-15013307b7ed%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1704608854&t=0767ff3bb1759f1c72389a42b438dfea";
+            }
+        }
+    </script>
 </body>
 </html>
